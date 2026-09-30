@@ -1,15 +1,13 @@
 <%%@ page contentType="text/html;charset=UTF-8" language="java" %%>
-<!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>Create Customer</title></head>
-<body>
-<h1>Create Customer</h1>
-<form method="post" action="customers?action=create">
-Name: <input type="text" name="name" required><br><br>
-Email: <input type="email" name="email" required><br><br>
-Address: <input type="text" name="address" required><br><br>
-<input type="submit" value="Create">
-</form>
+<%%@ taglib prefix="c" uri="jakarta.tags.core" %%>
+<html><head><title>Create customer</title></head><body>
+<h1>Create customer</h1>
 <p><a href="customers">Back to customer list</a></p>
-</body>
-</html>
+<c:if test="${requestScope['message'] != null}"><p>${requestScope["message"]}</p></c:if>
+<form method="post">
+<input type="hidden" name="action" value="create">
+<p>Name: <input type="text" name="name"></p>
+<p>Email: <input type="text" name="email"></p>
+<p>Address: <input type="text" name="address"></p>
+<input type="submit" value="Create customer">
+</form></body></html>

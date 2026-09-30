@@ -1,14 +1,14 @@
 <%%@ page contentType="text/html;charset=UTF-8" language="java" %%>
-<!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>Delete Customer</title></head>
-<body>
-<h1>Delete Customer</h1>
-<p>Are you sure you want to delete ${customer.name}?</p>
-<form method="post" action="customers?action=delete">
+<html><head><title>Delete customer</title></head><body>
+<h1>Delete customer</h1>
+<h3>Are you sure you want to delete this customer?</h3>
+<p>Name: ${customer.name}</p>
+<p>Email: ${customer.email}</p>
+<p>Address: ${customer.address}</p>
+<form method="post">
+<input type="hidden" name="action" value="delete">
 <input type="hidden" name="id" value="${customer.id}">
-<input type="submit" value="Delete">
+<input type="submit" value="Delete customer">
 </form>
-<p><a href="customers">Cancel</a></p>
-</body>
-</html>
+<a href="customers">Back to customer list</a>
+</body></html>
